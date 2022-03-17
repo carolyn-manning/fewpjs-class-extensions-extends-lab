@@ -10,11 +10,7 @@ class Polygon {
   
     get perimeter() {
       if (!Array.isArray(this.sides)) return;
-      let sum = 0;
-      for (let n of this.sides) {
-        sum += n
-      }
-      return sum
+      return this.sides.map(reduce((partialSum, a) => partialSum + a, 0))
     }
   }
   
